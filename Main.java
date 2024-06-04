@@ -2,7 +2,7 @@ import java.util.*;
 
 class Main {
     public static void main(String[] args) {
-        String input = "XLIV";
+        String input = "LVI";
         System.out.println(romanToInteger(input));
     }
 
@@ -16,6 +16,9 @@ class Main {
         values.put('C', 100);
         int value1 = 0;
         int value2 = 0;
+        if(roman.length() == 1) {
+            return values.get(roman.charAt(0));
+        }
         for (int i = 0; i <= roman.length()-2; i++) {
             value1 = values.get(roman.charAt(i));
             value2 = values.get(roman.charAt(i+1));
